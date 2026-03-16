@@ -12,8 +12,15 @@ import SwiftData
 struct TravelLogApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                Tab("Trips", systemImage: "airplane.up.right") {
+                    ContentView()
+                }
+                Tab("Wish list", systemImage: "heart") {
+                    WishList()
+                }
+            }
         }
-        .modelContainer(for: CountryVisit.self)
+        .modelContainer(for: [CountryVisit.self, Item.self])
     }
 }
