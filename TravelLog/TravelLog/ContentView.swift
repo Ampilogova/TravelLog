@@ -57,8 +57,8 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
+                .accessibilityIdentifier("AddCountryView")
             }
-
             .sheet(isPresented: $showAddScreen) {
                 AddCountryView()
             }
